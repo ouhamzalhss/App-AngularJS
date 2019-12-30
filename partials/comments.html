@@ -1,0 +1,73 @@
+
+<div class="container mt-2">
+  <div  ng-hide="loading">
+    
+
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#/">Articles</a></li>
+          <li class="breadcrumb-item active" aria-current="page">{{title}}</li>
+        </ol>
+      </nav>
+
+
+      <div class="row mt-4">
+        <div class="form-group col-md-6">
+            <input type="hidden" ng-model="order">
+            <input type="button" class="btn btn-danger btn-sm btn-search" ng-click="order='username'" value="Tri par utilisateur">
+        </div>
+        <div class="form-group col-md-6">
+          <input type="button" style="float: right;" class="btn btn-danger btn-sm btn-search" ng-click="order='content'" value="Tri par contenu">
+        </div>  
+      </div>
+
+      <!-- Les directives -->
+          <h2>{{title}}</h2>
+          <div id="comment-list">
+              <div class="alert alert-info comment" role="alert" ng-repeat="c in comments | filter:search | orderBy:order">
+                <span ng-click="deleteComment(c)" class="clickable btn btn-danger btn-sm">X</span>   
+                <ng-comment comment="c">
+                  <span style="color:red">ng-transclude</span>
+                </ng-comment> 
+              </div>
+          </div>
+        <!-- Les directives -->
+
+        <a class="btn btn-danger btn-sm" style="color: white; float: right;" ng-click="removeAll()">Supprimer All</a>
+
+        <h2>Ajouter un commentaire</h2>
+        <form ng-submit="addComment()">
+         <div class="row">
+            <div class="form-group col-md-6">
+              <label for="username">Utilisateur</label>
+              <input class="form-control" type="text" placeholder="username" ng-model="newComment.username">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="city">Ville</label>
+              <input class="form-control" type="text" id="city" placeholder="city" ng-model="newComment.city">
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="form-group col-md-6">
+              <label for="email">Email</label>
+              <input class="form-control" type="email" id="email" placeholder="email" ng-model="newComment.email">
+            </div>
+            <div class="form-group col-md-6">
+                 <label for="username">Date</label>
+                 <input class="form-control" ng-model="newComment.date" datepicker-options="{today:'Aujourdhui',format: 'dd/mm/yyyy'}" type="text" placeholder="Date">
+            </div>
+            <div class="form-group col-md-12">
+              <label for="content">Contenu</label>
+              <textarea rows="3" class="form-control" ng-model="newComment.content" id="content" cols="30" rows="10"></textarea>
+            </div>
+            <div class="form-group col-md-6">
+              <input class="btn btn-primary" type="submit" value="Envoyer">
+            </div>
+        </div>
+      </form>
+
+   
+</div>
+
+</div>

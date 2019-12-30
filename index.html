@@ -1,0 +1,82 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+    <base href="/angularjs/" />
+    <title>AngularJS App</title>
+    
+    <link rel="icon" href="https://content.techgig.com/thumb/msid-70553803,width-860,resizemode-4/Introduction-to-AngularJS-and-why-you-should-learn-it.jpg">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="js/plugin/themes/classic.css">
+    <link rel="stylesheet" href="js/plugin/themes/classic.date.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+      <div ng-show="loading">
+        <div class="d-flex justify-content-center">
+          <div class="spinner-grow text-danger" style="width: 3rem; height: 3rem; margin-top: 50;" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+
+      </div>
+          
+
+      <!-- As a link -->
+      <nav class="navbar navbar-expand-lg navbar-light blanc" ng-hide="loading">
+        <a class="navbar-brand blanc" href="home">Angular JS</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon blanc"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse blanc" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link blanc" href="home">Articles <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link blanc" href="contact">Contact <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-logo mx-auto">
+            <li class="nav-item">
+               <h3 class="mr-5">
+                  <i class="fa fa-clock-o"></i>
+                  <div style="display: inline; margin-left: 5px;" class="time"></div>
+               </h3>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" ng-model="search" placeholder="Search" aria-label="Search">
+          </form>
+        </div>
+      </nav>
+
+
+      <main ng-view></main>
+
+ 
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+      <script src="js/angular.min.js"></script>
+      <script src="js/angular-route.min.js"></script>
+      <script src="js/angular-animate.min.js"></script>
+      <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+      <script src="js/app.js"></script>
+      <script src="js/service/post.js"></script>
+
+      <script src="js/controller/posts.js"></script>
+      <script src="js/controller/comments.js"></script>
+      <script src="js/controller/contacts.js"></script>
+
+      <script src="js/directive.js/comment.js"></script>
+
+      <script src="js/plugin/compressed/picker.js"></script>
+      <script src="js/plugin/compressed/picker.date.js"></script>
+      
+  </body>
+</html>

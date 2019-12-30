@@ -1,0 +1,21 @@
+<div class="container my-2">
+    <div class="row" ng-hide="loading">
+                <div ng-repeat="post in posts | filter:search" class="my-2">
+                    <div class="col-md-3">
+                        <div  class="card bg-white" style="width: 20rem;">
+                            <img  ng-src="{{post.image}}" class="card-img-top img-fluid img-thumbnail w-100" alt="{{post.name}}">
+                            <div class="card-body">
+                              <h4 class="card-title">{{post.name}}</h4>
+                              <p class="card-text">
+                                {{post.content}}
+                              </p>
+                              <a class="btn btn-primary btn-sm comments" href="comments/{{ post.id }}">{{ post.comments.length }} commentaires</a>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+    </div>
+    <!-- {{ number | round:3 }} -->
+</div>
+
+

@@ -1,0 +1,12 @@
+
+<div class="commentDiv">
+    <p ng-transclude></p>
+    <span><img ng-src="{{comment.image}}" class="img" alt="{{comment.username}}"></span>
+    
+    <strong>
+    {{comment.username}}
+    </strong><br>
+    {{comment.content}} 
+    <br>
+    <span style="float: right;"><small>{{ comment.date }}</small></span>
+</div>

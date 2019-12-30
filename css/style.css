@@ -1,0 +1,81 @@
+.clickable{
+    cursor: pointer;
+    float: right;
+    border-radius: 50%;
+
+}
+
+.img{
+    width: 50px;
+    float: left;
+    margin: -12px 10px 0 0 ;
+    border-radius: 50%;
+}
+.commentDiv{
+    margin-bottom: 10px;
+}
+
+.comments{
+    float: right;
+}
+.blanc{
+    background-color: #dc3545;
+    color: white !important;
+}
+.btn-search{
+    border-radius: 50%;
+}
+
+
+/* The starting CSS styles for the enter animation */
+main.ng-enter {
+    transition: 1s linear all;
+    opacity:0;
+  }
+  
+  /* The finishing CSS styles for the enter animation */
+  main.ng-enter.ng-enter-active {
+    opacity:1;
+  }
+
+
+
+  #comment-list .comment.ng-enter{
+      transition: 0.5s linear all;
+      opacity: 0;
+      transform: translateY(30px);
+  }
+
+  #comment-list .comment.ng-enter.ng-enter-active{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+#comment-list .comment.ng-leave{
+    transition: 0.5s linear all;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#comment-list .comment.ng-leave.ng-leave-active{
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+#comment-list .comment.ng-leave-stagger{
+    transition-delay: 0.2s;
+    transition-duration: 0;
+}
+
+
+/* form validation */
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched{
+    border: 2px solid red;
+}
+
+input[disabled="disabled"]{
+    opacity: 0.5;
+    cursor: not-allowed;
+}
